@@ -6,7 +6,7 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:56:28 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/20 17:57:31 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/05/20 18:35:04 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char *start;
+	char	*start;
 
 	start = s;
 	while (n)
