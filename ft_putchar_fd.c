@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:31:40 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/23 14:15:06 by kepouliq         ###   ########.fr       */
+/*   Created: 2024/05/25 14:01:32 by kepouliq          #+#    #+#             */
+/*   Updated: 2024/05/25 14:10:09 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	write (fd, &c, 1);
 }
+
+/*
+#include <fcntl.h>
+
+int main()
+{
+	int fd;
+
+	fd = open("text.txt", O_TRUNC | O_CREAT | O_RDWR, 0640);
+	ft_putchar_fd('k',fd);
+	return(0);
+}*/

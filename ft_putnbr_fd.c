@@ -1,20 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:31:40 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/23 14:15:06 by kepouliq         ###   ########.fr       */
+/*   Created: 2024/05/25 16:52:50 by kepouliq          #+#    #+#             */
+/*   Updated: 2024/05/25 17:15:30 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	long	b;
+
+	b = n;
+	if (b < 0)
+	{
+		ft_putchar_fd('-', fd);
+		b *= -1;
+	}
+	if (n >= 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }
+
+/*
+#include <fcntl.h>
+
+int main()
+{
+	int test = 684;
+	int fd = open("text.txt", O_TRUNC | O_CREAT | O_RDWR, 0640);
+
+
+	ft_putnbr_fd(test, fd);
+	return(0);
+}*/

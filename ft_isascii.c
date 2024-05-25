@@ -6,9 +6,11 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:58:44 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/20 16:00:17 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:14:51 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
