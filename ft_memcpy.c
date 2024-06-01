@@ -6,7 +6,7 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 18:44:00 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/20 19:08:40 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:09:32 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*fsrc;
 	size_t		i;
 
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
 	fdest = dest;
 	fsrc = src;

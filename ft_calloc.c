@@ -6,7 +6,7 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:37:42 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/25 15:58:39 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:14:17 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb != 0 && len / nmemb != size)
 		return (NULL);
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);

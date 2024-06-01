@@ -6,7 +6,7 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 17:24:17 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/25 17:51:38 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/06/01 18:25:58 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,38 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	int		i;
+	char		*sub;
+	size_t		i;
+	size_t		j;
 
-	if (!len || !s)
-		return (NULL);
+	if (ft_strlen(s) <= 1)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	if (start > ft_strlen(s) - 1)
+		return (ft_strdup(""));
 	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
-	s += start;
+	j = 0;
 	i = 0;
-	while (len)
+	while (s[i])
 	{
-		sub[i] = *s;
+		if (i >= start && j < len)
+			sub[j++] = s[i];
 		i++;
-		s++;
-		len--;
 	}
-	sub[i] = '\0';
+	sub[j] = '\0';
 	return (sub);
 }
-/*
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
-	char *s = "coucou";
-	printf("%s", ft_substr(s, 1, 3));
+	char *s = "VOUVOU";
+	char	*res = ft_substr(s, 2, 2);
+	printf("%s", res);
+	free(res);
 	return(0);// dedi sarah
 }*/

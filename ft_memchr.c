@@ -6,7 +6,7 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:49:07 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/23 16:08:01 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:01:39 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	str = s;
 	i = 0;
-	if (s == NULL)
-		return (NULL);
 	while (i < n)
 	{
-		if (str[i] == c)
+		if (str[i] == (char) c)
 			return ((void *)&str[i]);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 16:52:50 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/25 17:15:30 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:12:06 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,9 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		b *= -1;
 	}
-	if (n >= 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
+	if (b > 9)
+		ft_putnbr_fd(b / 10, fd);
+	ft_putchar_fd(b % 10 + '0', fd);
 }
 
 /*

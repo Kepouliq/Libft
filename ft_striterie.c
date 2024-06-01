@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_striterie.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 16:01:21 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/05/31 14:55:46 by kepouliq         ###   ########.fr       */
+/*   Created: 2024/06/01 18:36:49 by kepouliq          #+#    #+#             */
+/*   Updated: 2024/06/01 19:31:18 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 32 && c < 127)
-		return (1);
-	return (0);
+    if (!s)
+        return;
+    
+    
 }
