@@ -6,7 +6,7 @@
 /*   By: kepouliq <kepouliq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:13:43 by kepouliq          #+#    #+#             */
-/*   Updated: 2024/06/04 10:44:58 by kepouliq         ###   ########.fr       */
+/*   Updated: 2024/06/05 12:21:20 by kepouliq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		ft_lstlast(*lst)->next = new;
 }
 
-
+/*
 #include<stdio.h>
 
 void printlist(t_list *list)
@@ -59,4 +59,4 @@ int main()
 	free(n2);
 	free(n3);
 	return (0);
-}
+}*/

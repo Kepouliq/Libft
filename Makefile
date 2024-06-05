@@ -19,10 +19,12 @@ SRCS = ft_atoi.c \
 		ft_split.c\
 		ft_strchr.c\
 		ft_strdup.c\
+		ft_striteri.c\
 		ft_strjoin.c\
 		ft_strlcat.c\
 		ft_strlcpy.c\
 		ft_strlen.c\
+		ft_strmapi.c\
 		ft_strncmp.c\
 		ft_strnstr.c\
 		ft_strrchr.c\
@@ -35,9 +37,23 @@ NAME = libft.a
 
 INCLUDE = libft.h
 
-CCFLAGS = cc -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+
+CC = cc
 
 OBJS = ${SRCS:.c=.o}
+
+BOBJS = ${BSRCS:.c=.o}
+
+BSRCS = ft_lstnew_bonus.c\
+			ft_lstadd_front_bonus.c\
+			ft_lstsize_bonus.c\
+			ft_lstlast_bonus.c\
+			ft_lstadd_back_bonus.c\
+			ft_lstdelone_bonus.c\
+			ft_lstclear_bonus.c\
+			ft_lstiter_bonus.c\
+			ft_lstmap_bonus.c\
 
 all : ${NAME}
 
@@ -45,10 +61,13 @@ ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
 .c.o: 
-	${CCFLAGS} -I ${INCLUDE} -c $< -o $(<:.c=.o)
+	${CC} ${CFLAGS} -I ${INCLUDE} -c $< -o $(<:.c=.o)
+
+bonus : ${OBJS} ${BOBJS}
+	ar rcs ${NAME} ${OBJS} ${BOBJS}
 
 clean: 
-		rm -rf ${OBJS}
+		rm -rf ${OBJS} ${BOBJS}
 
 fclean: clean
 		rm -rf ${NAME}
